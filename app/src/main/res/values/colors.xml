@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="LoginYellow">#feb603</color>
+    <color name="colorPrimary">#03a9f4</color>
+    <color name="profileFragmentText">#5491d2</color>
+    <color name="signout_btn">#fed4d4</color>
+    <color name="signout_text">#fc8989</color>
+    <color name="profilecart">#D6EAFF</color>
+
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.navigation.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+
+    <action
+        android:id="@+id/HomeToSeeAllProducts"
+        app:destination="@id/seeAllFragment" />
+        <action
+            android:id="@+id/HomeToDetailProducts"
+            app:destination="@id/productDetailFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.navigation.FavoriteFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.navigation.CartFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.navigation.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.SeeAllProductFragment"
+        android:label="fragment_see_all"
+        tools:layout="@layout/fragment_see_all" >
+    <action
+        android:id="@+id/HomeToDetailProducts"
+        app:destination="@id/productDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.rahulrohit.mytestcart.ui.fragments.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.rahulrohit.mytestcart.ui.login.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.rahulrohit.mytestcart.ui.login.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" />
+
+</navigation>

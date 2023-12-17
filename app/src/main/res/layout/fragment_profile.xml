@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.navigation.ProfileFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvProfile"
+        app:cardCornerRadius="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/profilecart"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivUser"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_person_add"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/profileFragmentText"
+            android:text="@string/name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/email"
+            android:textColor="@color/profileFragmentText" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/hLine"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_margin="40dp"
+        android:background="#d9dff0"
+        app:layout_constraintEnd_toEndOf="@id/cvProfile"
+        app:layout_constraintStart_toStartOf="@id/cvProfile"
+        app:layout_constraintTop_toBottomOf="@id/cvProfile" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvOrders"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/hLine"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/profileFragmentText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_shopping_cart_24"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_right_arrow_30"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/profileFragmentText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="10dp"
+            android:text="@string/orders"/>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        app:cardCornerRadius="10dp"
+        android:id="@+id/cvShoppingAddress"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvOrders"
+        android:layout_margin="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/profileFragmentText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvShoppingAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_location_30"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_right_arrow_30"
+            android:textColor="@color/profileFragmentText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="10dp"
+            android:text="@string/shopping_address"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvHelp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvShoppingAddress"
+        android:layout_margin="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/profileFragmentText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_help_30"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_right_arrow_30"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/profileFragmentText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="10dp"
+            android:text="@string/help"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvAbout"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvHelp"
+        android:layout_margin="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/profileFragmentText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_about_30"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableEnd="@drawable/ic_right_arrow_30"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/profileFragmentText"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:drawablePadding="10dp"
+            android:text="@string/about"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="@string/sign_out"
+        android:id="@+id/btnSignout"
+        android:background="@drawable/round_background"
+        android:textColor="@color/signout_text"
+        android:textStyle="bold"
+        android:layout_margin="35dp"
+        app:layout_constraintTop_toBottomOf="@id/cvAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
