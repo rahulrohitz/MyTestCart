@@ -5,6 +5,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
@@ -24,7 +25,6 @@ class ProductDetailFragment : Fragment() {
     private var isExpanded = false
     private var isFavorite = false
     private val viewModel: ViewModel by viewModels()
-    // Inside your Fragment class
     private val db: ProductDatabase by lazy {
         ProductDatabase.getDatabase(requireContext())
     }
@@ -65,8 +65,11 @@ class ProductDetailFragment : Fragment() {
                         image =  product.image,
                         rate = product.rating.rate
                     )
+
                     db.productDao().insertProduct(cartEntity)
                 }
+                Toast.makeText(requireContext(),"Add To Cart",Toast.LENGTH_SHORT).show()
+
             }
             binding.favoriteIcon.setOnClickListener {
                 isFavorite = !isFavorite
@@ -85,6 +88,8 @@ class ProductDetailFragment : Fragment() {
                 )
                 db.productDao().insertProduct(favEntity)
                 }
+                Toast.makeText(requireContext(),"Add To Favorite",Toast.LENGTH_SHORT).show()
+
             }
         }
         toggleTextView()

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rahulrohit.mytestcart.database.room.favorite.ProductEntity
@@ -13,6 +14,7 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
     private var products: MutableList<ProductEntity> = mutableListOf()
     private var onItemClick: ((ProductEntity) -> Unit)? = null
+    private var onDeleteClick: ((ProductEntity) -> Unit)? = null
 
     fun setProducts(products: List<ProductEntity>) {
         this.products.clear()
@@ -37,14 +39,23 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(products[position])
+
+        }
+        holder.binding.deleteButton.setOnClickListener {
+            onDeleteClick?.invoke(products[position])
+            Toast.makeText(holder.itemView.context, "Item is Deleted", Toast.LENGTH_SHORT).show()
         }
     }
+    fun setOnDeleteClickListener(listener: (ProductEntity) -> Unit) {
+        onDeleteClick = listener
 
+
+    }
     override fun getItemCount(): Int {
         return products.size
     }
 
-    inner class ViewHolder(private val binding: ItemFavoriteBinding) :
+    inner class ViewHolder(val binding: ItemFavoriteBinding) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(product: ProductEntity) {
