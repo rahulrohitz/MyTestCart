@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
@@ -32,15 +31,10 @@ class CartFragment : Fragment() {
 
         favoriteAdapter = FavoriteAdapter()
         binding.recyclerViewCartProduct.adapter = favoriteAdapter
-        binding.recyclerViewCartProduct.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.recyclerViewCartProduct.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         sharedViewModel.getAllProducts().observe(viewLifecycleOwner) { products ->
 
             favoriteAdapter.setProducts(products)
-        }
-
-        favoriteAdapter.setOnDeleteClickListener {productEntity ->
-
-            sharedViewModel.deleteProduct(productEntity.id)
         }
         return binding.root
     }

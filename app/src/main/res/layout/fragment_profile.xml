@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/profilecart"
         android:layout_margin="10dp"
-
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -30,10 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:textSize="20dp"
-            android:id="@+id/tvName"
             android:layout_marginTop="30dp"
             android:textColor="@color/profileFragmentText"
-            android:text="@string/rahul"/>
+            android:text="@string/name"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvUserEmail"
@@ -41,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="60dp"
-            android:text="rahul@mail.com"
+            android:text="@string/email"
             android:textColor="@color/profileFragmentText" />
 
     </com.google.android.material.card.MaterialCardView>

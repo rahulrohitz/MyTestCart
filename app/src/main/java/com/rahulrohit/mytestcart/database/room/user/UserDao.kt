@@ -15,5 +15,4 @@
 
         @Query("SELECT * FROM user_table WHERE email = :email")
         suspend fun getUserByEmail(email: String): User?
-
     }
