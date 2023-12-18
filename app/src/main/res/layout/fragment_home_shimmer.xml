@@ -1,104 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".ui.fragments.navigation.HomeFragment">
-
-<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWomenAll"
-        android:text="@string/women_products"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:textColor="@color/colorPrimary"
+        android:background="@color/shimmer_Loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvWomenSellAll"
-        android:text="@string/see_all"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:drawableEnd="@drawable/ic_double_arrow_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+
+    <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/tvWomenAll"
         android:id="@+id/recyclerVieWomenProduct"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        android:orientation="horizontal" >
+        <include layout="@layout/item_product_shimmer"/>
+        <include layout="@layout/item_product_shimmer"/>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMenAll"
-        android:text="@string/men_products"
         app:layout_constraintTop_toBottomOf="@+id/recyclerVieWomenProduct"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:textColor="@color/colorPrimary"
+        android:background="@color/shimmer_Loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMenSellAll"
-        android:text="@string/see_all"
         app:layout_constraintTop_toBottomOf="@+id/recyclerVieWomenProduct"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:drawableEnd="@drawable/ic_double_arrow_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/tvMenAll"
         android:id="@+id/recyclerViewMenProduct"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        android:layout_height="wrap_content" >
+    <include layout="@layout/item_product_shimmer"/>
+    <include layout="@layout/item_product_shimmer"/>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAll"
-        android:text="All Products"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewMenProduct"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:textColor="@color/colorPrimary"
+        android:background="@color/shimmer_Loading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvSellAll"
-        android:text="@string/see_all"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewMenProduct"
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center_vertical"
         android:layout_margin="20dp"
-        android:drawableEnd="@drawable/ic_double_arrow_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewAllProduct"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAll" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>

@@ -38,6 +38,7 @@ class ProductDetailFragment : Fragment() {
         _binding =  FragmentProductDetailBinding.inflate(inflater, container, false)
 
         val id = arguments?.getInt("id",0)?: 0
+        binding.shimmerEffect.visibility = View.VISIBLE
 
         viewModel.fetchProduct(id)
 
@@ -48,6 +49,7 @@ class ProductDetailFragment : Fragment() {
             binding.productDescripton.text = product.description
             binding.productCategory.text = product.category
             binding.productRate.text = product.rating.rate.toString()
+            binding.shimmerEffect.visibility = View.GONE
 
 
             binding.backButton.setOnClickListener {

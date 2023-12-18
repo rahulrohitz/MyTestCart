@@ -54,7 +54,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/addtocard_background"
-        android:text="+ Add To Cart"
+        android:text="@string/add_to_cart"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="17sp"
@@ -85,14 +85,14 @@
                 android:id="@+id/product_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mens Cotton Jacket"
+                android:textColor="@color/shimmer_Loading"
                 android:textSize="19sp" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/product_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="men's clothing"
+                android:text="@string/men_s_clothing"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -112,7 +112,7 @@
                     android:id="@+id/productRate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.7"
+                    android:textColor="@color/shimmer_Loading"
                     android:textSize="19sp" />
             </LinearLayout>
 
@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Product Descripton"
+                android:text="@string/product_descripton"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
 
@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.n"
+                android:text="@string/product_description"
                 android:textSize="16sp" />
 
 
@@ -142,7 +142,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="546.56 $"
         android:textColor="@color/colorPrimary"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -152,5 +151,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/addToCartButton"
         app:layout_constraintVertical_bias="0.0" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/shimmerEffect">
+        <include layout="@layout/fragment_product_detail_shimmer" />
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
