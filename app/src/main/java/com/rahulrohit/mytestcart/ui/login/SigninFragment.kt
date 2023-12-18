@@ -38,6 +38,7 @@ class SigninFragment : Fragment() {
                     if (user != null) {
 
                         Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+                        findNavController().navigateUp()
                         findNavController().navigate(R.id.navigation_home)
                     } else {
                         Toast.makeText(requireContext(), "Invalid credentials", Toast.LENGTH_SHORT).show()
