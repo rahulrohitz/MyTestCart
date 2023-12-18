@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,8 +16,7 @@ class FavoriteFragment : Fragment() {
 
     private var _binding: FragmentFavoriteBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+
     private val binding get() = _binding!!
     private lateinit var favoriteAdapter: FavoriteAdapter
     private val sharedViewModel: SharedViewModel by activityViewModels()
@@ -32,13 +32,17 @@ class FavoriteFragment : Fragment() {
 
         favoriteAdapter = FavoriteAdapter()
         binding.recyclerViewFavProduct.adapter = favoriteAdapter
-        binding.recyclerViewFavProduct.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewFavProduct.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
         sharedViewModel.getAllProducts().observe(viewLifecycleOwner) { products ->
 
             favoriteAdapter.setProducts(products)
         }
 
+        favoriteAdapter.setOnDeleteClickListener {productEntity ->
+
+            sharedViewModel.deleteProduct(productEntity.id)
+        }
         return root
     }
 
