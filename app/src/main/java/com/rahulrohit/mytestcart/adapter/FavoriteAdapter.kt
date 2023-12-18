@@ -49,7 +49,6 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
     fun setOnDeleteClickListener(listener: (ProductEntity) -> Unit) {
         onDeleteClick = listener
 
-
     }
     override fun getItemCount(): Int {
         return products.size
