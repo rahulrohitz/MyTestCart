@@ -32,9 +32,11 @@ class SeeAllProductFragment : Fragment() {
         binding.recyclerViewAllProduct.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL,false)
         binding.recyclerViewAllProduct.adapter = allHomeProductAdapter
 
-
+        binding.shimmerEffect.visibility = View.VISIBLE
         viewModel.allProducts.observe(viewLifecycleOwner) { products ->
             products?.let {
+                binding.shimmerEffect.visibility = View.GONE
+
                 allHomeProductAdapter.setProducts(it)
             }
         }

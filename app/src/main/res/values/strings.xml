@@ -31,5 +31,12 @@
     <string name="men_products">Men Products</string>
     <string name="btnSignup">Sign Up</string>
     <string name="rahul">Rahul</string>
+    <string name="_52">52 $</string>
+    <string name="product_description">Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.n</string>
+    <string name="product_descripton">Product Descripton</string>
+    <string name="_3_9">3.9</string>
+    <string name="men_s_clothing">men\'s clothing</string>
+    <string name="mens_jacket">Mens Jacket</string>
+    <string name="add_to_cart">+ Add To Cart</string>
 
 </resources>

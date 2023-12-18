@@ -48,9 +48,11 @@ class HomeFragment : Fragment() {
         binding.recyclerViewAllProduct.layoutManager = GridLayoutManager(requireContext(), 2,GridLayoutManager.VERTICAL,false)
         binding.recyclerViewAllProduct.adapter = allHomeProductAdapter
 
-
+        binding.shimmerEffect.visibility = View.VISIBLE
         viewModel.womenProducts.observe(viewLifecycleOwner) { products ->
             products?.let {
+
+                binding.shimmerEffect.visibility  = View.GONE
                 womenHomeProductAdapter.setProducts(it)
             }
         }
@@ -60,6 +62,7 @@ class HomeFragment : Fragment() {
         viewModel.menProducts.observe(viewLifecycleOwner) { products ->
             products?.let {
                 menHomeProductAdapter.setProducts(it)
+
             }
         }
 
@@ -68,6 +71,7 @@ class HomeFragment : Fragment() {
         viewModel.allProducts.observe(viewLifecycleOwner) { products ->
             products?.let {
                 allHomeProductAdapter.setProducts(it)
+
             }
         }
 
@@ -122,4 +126,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

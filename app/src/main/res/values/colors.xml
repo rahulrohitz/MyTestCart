@@ -8,5 +8,6 @@
     <color name="signout_btn">#fed4d4</color>
     <color name="signout_text">#fc8989</color>
     <color name="profilecart">#D6EAFF</color>
+    <color name="shimmer_Loading">#DAD8D3</color>
 
 </resources>

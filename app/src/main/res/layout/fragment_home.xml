@@ -100,5 +100,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAll" />
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        app:layout_constraintBaseline_toTopOf="parent"
+        android:visibility="gone"
+        android:id="@+id/shimmerEffect"
+        android:layout_height="wrap_content">
+        <include layout="@layout/fragment_home_shimmer"/>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.core.widget.NestedScrollView>
