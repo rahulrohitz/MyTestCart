@@ -14,10 +14,20 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
         return productDao.getAllProducts()
     }
 
+    fun getAllCartProducts(): LiveData<List<CartProductEntity>> {
+        return productDao.getAllCartProducts()
+    }
     fun deleteProduct(productId: Int) {
         GlobalScope.launch {
             productDao.deleteProduct(productId)
         }
     }
+
+    fun deletecartProduct(productId: Int) {
+        GlobalScope.launch {
+            productDao.deleteCartProduct(productId)
+        }
+    }
+
 
 }
