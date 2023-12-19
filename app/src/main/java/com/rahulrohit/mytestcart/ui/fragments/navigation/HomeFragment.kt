@@ -49,10 +49,14 @@ class HomeFragment : Fragment() {
         binding.recyclerViewAllProduct.adapter = allHomeProductAdapter
 
         binding.shimmerEffect.visibility = View.VISIBLE
+        binding.constraintRV.visibility = View.GONE
+
         viewModel.womenProducts.observe(viewLifecycleOwner) { products ->
             products?.let {
 
                 binding.shimmerEffect.visibility  = View.GONE
+                binding.constraintRV.visibility = View.VISIBLE
+
                 womenHomeProductAdapter.setProducts(it)
             }
         }

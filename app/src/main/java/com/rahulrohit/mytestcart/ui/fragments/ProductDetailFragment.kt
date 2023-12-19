@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.rahulrohit.mytestcart.R
 import com.rahulrohit.mytestcart.api.ViewModel
+import com.rahulrohit.mytestcart.database.room.favorite.CartProductEntity
 import com.rahulrohit.mytestcart.database.room.favorite.ProductDatabase
 import com.rahulrohit.mytestcart.database.room.favorite.ProductEntity
 import com.rahulrohit.mytestcart.databinding.FragmentProductDetailBinding
@@ -58,7 +59,7 @@ class ProductDetailFragment : Fragment() {
 
             binding.addToCartButton.setOnClickListener {
                 GlobalScope.launch {
-                    val cartEntity = ProductEntity(
+                    val cartEntity = CartProductEntity(
                         id = product.id,
                         title = product.title,
                         description = product.description,
@@ -68,7 +69,7 @@ class ProductDetailFragment : Fragment() {
                         rate = product.rating.rate
                     )
 
-                    db.productDao().insertProduct(cartEntity)
+                    db.productDao().cartinsertProduct(cartEntity)
                 }
                 Toast.makeText(requireContext(),"Add To Cart",Toast.LENGTH_SHORT).show()
 
